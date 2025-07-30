@@ -1,0 +1,217 @@
+<!-- from flask import Flask, render_template_string -->
+<!--  -->
+<!-- app = Flask(__name__) -->
+<!--  -->
+<!-- html_code = """ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Govinda - Developer Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background: #0d0d0d;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 0 6px #00aaff;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00aaff; }
+      to { text-shadow: 0 0 15px #00aaff; }
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid #00aaff;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .1em;
+      animation: typing 4s steps(30, end), blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #00aaff }
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #00aaff, #0077cc);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: #000;
+      transition: 0.3s;
+      box-shadow: 0 0 6px #0077cc60;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 12px #00aaff;
+      transform: scale(1.07);
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #00aaff60;
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 12px #00aaff50;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    a {
+      color: #00aaff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Slide menu */
+    .menu-slide {
+      transition: transform 0.4s ease;
+      transform: translateX(100%);
+    }
+
+    .menu-open {
+      transform: translateX(0%);
+    }
+
+    .glass-bg {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-link {
+      animation: fadeInUp 0.3s ease forwards;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .nav-link:nth-child(1) { animation-delay: 0.1s; }
+    .nav-link:nth-child(2) { animation-delay: 0.2s; }
+    .nav-link:nth-child(3) { animation-delay: 0.3s; }
+    .nav-link:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="px-6 py-10">
+
+<!-- Particle Background -->
+<div id="particles-js"></div>
+
+<!-- Header -->
+<header class="text-center mb-20">
+  <h1 class="hero-title mb-4">Hi, I'm Govinda</h1>
+  <h2 class="typewriter text-lg text-blue-300 mb-6">Python Developer | Telegram Bot Creator | Tech Explorer</h2>
+</header>
+
+<!-- About -->
+<section class="max-w-4xl mx-auto mb-16">
+  <h2 class="text-3xl font-semibold text-blue-400 mb-4">About Me</h2>
+  <p class="text-gray-300 leading-relaxed">
+    I'm a passionate self-taught developer who loves building creative solutions using code.
+    Whether it's a Telegram bot, or a useful script in Python — I enjoy making tools that solve real-world problems.
+  </p>
+</section>
+
+<!-- Skills -->
+<section class="max-w-4xl mx-auto mb-16">
+  <h2 class="text-3xl font-semibold text-blue-400 mb-6">Skills</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="card text-center"><i class="fab fa-python mr-2"></i>Python (Learning)</div>
+    <div class="card text-center"><i class="fab fa-telegram mr-2"></i>Telegram Bots</div>
+    <div class="card text-center"><i class="fas fa-network-wired mr-2"></i>Networking (SSH, VPN)</div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="max-w-4xl mx-auto mb-16">
+  <h2 class="text-3xl font-semibold text-yellow-400 mb-6">Projects</h2>
+  <div class="card">
+    <h3 class="text-xl font-bold mb-2">
+      <a href="https://t.me/Gamechainlolbot" target="_blank"><u>Word Chain Game Bot</u> <i class="fab fa-telegram"></i></a>
+    </h3>
+    <p class="text-gray-300">A group game bot built in Python — play word chains with scoring, turns & global leaderboard.</p>
+  </div>
+</section>
+
+<!-- Connect With Me -->
+<section class="max-w-4xl mx-auto mb-20 text-center">
+  <h2 class="text-3xl font-semibold text-blue-400 mb-6">Connect With Me</h2>
+  <div class="flex justify-center space-x-4">
+    <a href="https://t.me/govindahere" target="_blank" class="btn flex items-center space-x-2">
+      <i class="fab fa-telegram"></i><span>Telegram</span>
+    </a>
+    <a href="https://github.com/Govindaku" target="_blank" class="btn flex items-center space-x-2">
+      <i class="fab fa-github"></i><span>GitHub</span>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center text-gray-500 mt-20">
+  <p>© 2025 Govinda. Built with ❤️ using Flask + Tailwind CSS</p>
+</footer>
+
+<!-- Particle JS Script -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 60 },
+      "color": { "value": "#00aaff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5 },
+      "size": { "value": 3 },
+      "move": { "enable": true, "speed": 1 }
+    }
+  });
+</script>
+
+</body>
+</html>
+<!-- """ -->
+<!--  -->
+<!-- @app.route("/") -->
+<!-- def home(): -->
+    <!-- return render_template_string(html_code) -->
+<!--  -->
+<!-- if __name__ == "__main__": -->
+    <!-- app.run(debug=True) -->
